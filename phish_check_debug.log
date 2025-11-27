@@ -1,0 +1,133 @@
+2025-10-14 15:29:35,508 | ERROR | main crashed
+2025-10-14 15:29:35,509 | DEBUG | Full traceback:
+Traceback (most recent call last):
+  File "c:\Users\Abhishek tiwari\OneDrive\Desktop\python\fakedetector.py", line 245, in main
+    user_input = input("Enter website URL (example.com or https://example.com): ").strip()
+                 ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+
+2025-10-14 15:29:57,748 | ERROR | analyze_url encountered an unexpected error. Full traceback written to log.
+2025-10-14 15:29:57,750 | DEBUG | Full traceback:
+Traceback (most recent call last):
+  File "c:\Users\Abhishek tiwari\OneDrive\Desktop\python\fakedetector.py", line 180, in analyze_url
+    print(f"\U0001f50e Hostname: {hostname}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek tiwari\AppData\Local\Programs\Python\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f50e' in position 0: character maps to <undefined>
+
+2025-10-14 15:32:02,455 | ERROR | analyze_url encountered an unexpected error. Full traceback written to log.
+2025-10-14 15:32:02,456 | DEBUG | Full traceback:
+Traceback (most recent call last):
+  File "c:\Users\Abhishek tiwari\OneDrive\Desktop\python\fakedetector.py", line 192, in analyze_url
+    age_days = (datetime.utcnow() - creation).days
+                ~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: can't subtract offset-naive and offset-aware datetimes
+
+2025-10-14 15:32:25,403 | ERROR | analyze_url encountered an unexpected error. Full traceback written to log.
+2025-10-14 15:32:25,404 | DEBUG | Full traceback:
+Traceback (most recent call last):
+  File "c:\Users\Abhishek tiwari\OneDrive\Desktop\python\fakedetector.py", line 192, in analyze_url
+    age_days = (datetime.now() - creation).days
+                ~~~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: can't subtract offset-naive and offset-aware datetimes
+
+2025-10-14 15:32:46,772 | DEBUG | Starting new HTTPS connection (1): example.com:443
+2025-10-14 15:32:48,326 | DEBUG | https://example.com:443 "GET / HTTP/1.1" 200 363
+2025-10-14 15:32:48,329 | INFO | Analysis completed for example.com with warnings=0
+2025-10-14 15:33:02,091 | DEBUG | Starting new HTTP connection (1): example.com:80
+2025-10-14 15:33:02,865 | DEBUG | http://example.com:80 "GET / HTTP/1.1" 200 363
+2025-10-14 15:33:02,867 | INFO | Analysis completed for example.com with warnings=1
+2025-10-14 15:33:08,924 | ERROR | main crashed
+2025-10-14 15:33:08,925 | DEBUG | Full traceback:
+Traceback (most recent call last):
+  File "c:\Users\Abhishek tiwari\OneDrive\Desktop\python\fakedetector.py", line 245, in main
+    user_input = input("Enter website URL (example.com or https://example.com): ").strip()
+                 ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+
+2025-10-14 15:35:05,955 | DEBUG | Starting new HTTP connection (1): example.com:80
+2025-10-14 15:35:06,669 | DEBUG | http://example.com:80 "GET / HTTP/1.1" 200 363
+2025-10-14 15:35:06,671 | INFO | Analysis completed for example.com with warnings=1
+2025-10-14 15:37:49,898 | DEBUG | Starting new HTTPS connection (1): example.com:443
+2025-10-14 15:37:51,317 | DEBUG | https://example.com:443 "GET / HTTP/1.1" 200 363
+2025-10-14 15:37:51,320 | INFO | Analysis completed for example.com with warnings=0
+2025-10-14 15:38:20,633 | DEBUG | Starting new HTTP connection (1): casekaro.com:80
+2025-10-14 15:38:21,215 | DEBUG | http://casekaro.com:80 "GET / HTTP/1.1" 301 167
+2025-10-14 15:38:21,216 | DEBUG | Starting new HTTPS connection (1): casekaro.com:443
+2025-10-14 15:38:22,147 | DEBUG | https://casekaro.com:443 "GET / HTTP/1.1" 200 None
+2025-10-14 15:38:22,197 | INFO | Analysis completed for casekaro.com with warnings=2
+2025-10-14 15:39:41,808 | DEBUG | Starting new HTTPS connection (1): www.google.com:443
+2025-10-14 15:39:42,915 | DEBUG | https://www.google.com:443 "GET /?zx=1760436560281&no_sw_cr=1 HTTP/1.1" 200 None
+2025-10-14 15:39:42,921 | INFO | Analysis completed for google.com with warnings=0
+2025-10-14 15:40:10,276 | DEBUG | Starting new HTTP connection (1): flipkart.com:80
+2025-10-14 15:40:10,677 | DEBUG | http://flipkart.com:80 "GET / HTTP/1.1" 301 0
+2025-10-14 15:40:10,678 | DEBUG | Starting new HTTPS connection (1): flipkart.com:443
+2025-10-14 15:40:11,496 | DEBUG | https://flipkart.com:443 "GET / HTTP/1.1" 301 162
+2025-10-14 15:40:11,497 | DEBUG | Starting new HTTPS connection (1): www.flipkart.com:443
+2025-10-14 15:40:13,339 | DEBUG | https://www.flipkart.com:443 "GET / HTTP/1.1" 200 None
+2025-10-14 15:40:14,110 | INFO | Analysis completed for flipkart.com with warnings=1
+2025-10-14 15:42:50,293 | DEBUG | whois failed for https: Whois command returned no output
+2025-10-14 15:42:50,295 | DEBUG | Starting new HTTPS connection (1): www.https:443
+2025-10-14 15:42:50,417 | DEBUG | RequestException for https://www.https://www.meesho.io: HTTPSConnectionPool(host='www.https', port=443): Max retries exceeded with url: /www.meesho.io (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002BE5C634590>: Failed to resolve 'www.https' ([Errno 11001] getaddrinfo failed)"))
+2025-10-14 15:42:50,417 | INFO | Fetch error for https://www.https://www.meesho.io
+2025-10-14 15:42:50,418 | INFO | Analysis completed for https with warnings=1
+2025-10-14 15:43:12,958 | DEBUG | whois failed for meesho.io& "c: Whois command returned no output
+2025-10-14 15:43:12,961 | DEBUG | Starting new HTTPS connection (1): www.meesho.io&%20%22c:443
+2025-10-14 15:43:12,964 | DEBUG | RequestException for https://www.meesho.io& "C:/Users/Abhishek tiwari/AppData/Local/Programs/Python/Python314/python.exe" "c:/Users/Abhishek tiwari/OneDrive/Desktop/python/fakedetector.py": HTTPSConnectionPool(host='www.meesho.io&%20%22c', port=443): Max retries exceeded with url: /Users/Abhishek%20tiwari/AppData/Local/Programs/Python/Python314/python.exe%22%20%22c:/Users/Abhishek%20tiwari/OneDrive/Desktop/python/fakedetector.py%22 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B2EB3C4590>: Failed to resolve 'www.meesho.io&%20%22c' ([Errno 11001] getaddrinfo failed)"))
+2025-10-14 15:43:12,964 | INFO | Fetch error for https://www.meesho.io& "C:/Users/Abhishek tiwari/AppData/Local/Programs/Python/Python314/python.exe" "c:/Users/Abhishek tiwari/OneDrive/Desktop/python/fakedetector.py"
+2025-10-14 15:43:12,965 | INFO | Analysis completed for meesho.io& "c with warnings=1
+2025-10-14 15:43:31,187 | DEBUG | Starting new HTTPS connection (1): www.meesho.io:443
+2025-10-14 15:43:32,076 | DEBUG | https://www.meesho.io:443 "GET / HTTP/1.1" 200 12871
+2025-10-14 15:43:32,090 | INFO | Analysis completed for meesho.io with warnings=0
+2025-10-14 15:44:47,773 | DEBUG | Starting new HTTP connection (1): americannews.com:80
+2025-10-14 15:44:56,292 | DEBUG | RequestException for http://americannews.com: HTTPConnectionPool(host='americannews.com', port=80): Read timed out. (read timeout=8)
+2025-10-14 15:44:56,293 | INFO | Fetch error for http://americannews.com
+2025-10-14 15:44:56,293 | INFO | Analysis completed for americannews.com with warnings=2
+2025-10-14 15:50:22,303 | DEBUG | Starting new HTTP connection (1): xhamster19.com:80
+2025-10-14 15:50:23,196 | DEBUG | http://xhamster19.com:80 "GET / HTTP/1.1" 301 None
+2025-10-14 15:50:23,197 | DEBUG | Starting new HTTPS connection (1): xhamster19.com:443
+2025-10-14 15:50:25,370 | DEBUG | https://xhamster19.com:443 "GET / HTTP/1.1" 200 None
+2025-10-14 15:50:25,826 | INFO | Analysis completed for xhamster19.com with warnings=2
+2025-10-14 15:52:15,385 | DEBUG | Starting new HTTP connection (1): google.com:80
+2025-10-14 15:52:16,197 | DEBUG | http://google.com:80 "GET / HTTP/1.1" 301 219
+2025-10-14 15:52:16,198 | DEBUG | Starting new HTTP connection (1): www.google.com:80
+2025-10-14 15:52:16,865 | DEBUG | http://www.google.com:80 "GET / HTTP/1.1" 200 None
+2025-10-14 15:52:16,869 | INFO | Analysis completed for google.com with warnings=1
+2025-10-14 16:02:31,394 | DEBUG | Starting new HTTPS connection (1): www.coursera.com:443
+2025-10-14 16:02:34,029 | DEBUG | https://www.coursera.com:443 "GET / HTTP/1.1" 302 138
+2025-10-14 16:02:34,031 | DEBUG | Starting new HTTPS connection (1): www.coursera.org:443
+2025-10-14 16:02:35,688 | DEBUG | https://www.coursera.org:443 "GET / HTTP/1.1" 200 None
+2025-10-14 16:02:36,069 | INFO | Analysis completed for coursera.com with warnings=0
+2025-10-15 20:50:08,415 | DEBUG | Starting new HTTP connection (1): github.com:80
+2025-10-15 20:50:08,699 | DEBUG | http://github.com:80 "GET / HTTP/1.1" 301 0
+2025-10-15 20:50:08,701 | DEBUG | Starting new HTTPS connection (1): github.com:443
+2025-10-15 20:50:09,527 | DEBUG | https://github.com:443 "GET / HTTP/1.1" 200 None
+2025-10-15 20:50:09,872 | INFO | Analysis completed for github.com with warnings=1
+2025-10-17 19:39:21,877 | DEBUG | Starting new HTTPS connection (1): www.hentai20.io:443
+2025-10-17 19:39:23,050 | DEBUG | https://www.hentai20.io:443 "GET / HTTP/1.1" 301 None
+2025-10-17 19:39:23,051 | DEBUG | Starting new HTTPS connection (1): hentai20.io:443
+2025-10-17 19:39:23,970 | DEBUG | https://hentai20.io:443 "GET / HTTP/1.1" 200 None
+2025-10-17 19:39:24,030 | INFO | Analysis completed for hentai20.io with warnings=0
+2025-10-22 17:24:00,741 | DEBUG | Starting new HTTP connection (1): www.hianime.com:80
+2025-10-22 17:24:01,869 | DEBUG | http://www.hianime.com:80 "GET / HTTP/1.1" 200 None
+2025-10-22 17:24:01,873 | INFO | Analysis completed for hianime.com with warnings=1
+2025-10-22 17:27:39,021 | DEBUG | Starting new HTTP connection (1): www.google.com:80
+2025-10-22 17:27:40,719 | DEBUG | http://www.google.com:80 "GET / HTTP/1.1" 200 None
+2025-10-22 17:27:40,839 | INFO | Analysis completed for google.com with warnings=1
+2025-10-31 12:53:38,214 | DEBUG | Starting new HTTP connection (1): www.udemy.com:80
+2025-10-31 12:53:38,608 | DEBUG | http://www.udemy.com:80 "GET / HTTP/1.1" 301 167
+2025-10-31 12:53:38,611 | DEBUG | Starting new HTTPS connection (1): www.udemy.com:443
+2025-10-31 12:53:40,094 | DEBUG | https://www.udemy.com:443 "GET / HTTP/1.1" 200 None
+2025-10-31 12:53:40,127 | INFO | Analysis completed for udemy.com with warnings=1
+2025-11-09 10:08:55,848 | DEBUG | Starting new HTTPS connection (1): example.com:443
+2025-11-09 10:08:57,603 | DEBUG | https://example.com:443 "GET / HTTP/1.1" 200 363
+2025-11-09 10:08:57,607 | INFO | Analysis completed for example.com with warnings=0
+2025-11-09 10:10:00,968 | DEBUG | Starting new HTTPS connection (1): www.facebook.com:443
+2025-11-09 10:10:02,286 | DEBUG | https://www.facebook.com:443 "GET / HTTP/1.1" 200 None
+2025-11-09 10:10:02,413 | INFO | Analysis completed for facebook.com with warnings=1
+2025-11-10 17:58:35,713 | DEBUG | Starting new HTTPS connection (1): www.xhamster.com:443
+2025-11-10 17:58:51,814 | DEBUG | RequestException for https://www.xhamster.com: HTTPSConnectionPool(host='www.xhamster.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E4A2395010>, 'Connection to www.xhamster.com timed out. (connect timeout=8)'))
+2025-11-10 17:58:51,815 | INFO | Fetch error for https://www.xhamster.com
+2025-11-10 17:58:51,816 | INFO | Analysis completed for xhamster.com with warnings=1
