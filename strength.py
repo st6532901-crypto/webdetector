@@ -15,15 +15,12 @@ class PasswordStrengthChecker:
         self.button_bg = "red"
         self.button_fg = "black"
 
-        # Main frame
         self.main_frame = tk.Frame(self.root, bg=self.bg_color)
         self.main_frame.pack(fill="both", expand=True, padx=20, pady=20)
 
-        # Title
         tk.Label(self.main_frame, text="Password Strength Checker", bg=self.bg_color, fg=self.fg_color,
                  font=("Arial", 16, "bold")).pack(pady=10)
 
-        # Password entry
         tk.Label(self.main_frame, text="Enter Password:", bg=self.bg_color, fg=self.fg_color,
                  font=("Arial", 12)).pack(pady=5)
         self.password_entry = tk.Entry(self.main_frame, show="*", bg="#333333", fg=self.fg_color,
@@ -31,18 +28,15 @@ class PasswordStrengthChecker:
         self.password_entry.pack(pady=5)
         self.password_entry.bind("<KeyRelease>", self.check_password)  # Real-time checking
 
-        # Show/hide password checkbox
         self.show_password = tk.BooleanVar()
         tk.Checkbutton(self.main_frame, text="Show Password", variable=self.show_password,
                        bg=self.bg_color, fg=self.fg_color, selectcolor="#333333",
                        command=self.toggle_password).pack(pady=5)
 
-        # Strength label
         self.strength_label = tk.Label(self.main_frame, text="Strength: None", bg=self.bg_color,
                                       fg=self.fg_color, font=("Arial", 12, "bold"))
         self.strength_label.pack(pady=10)
 
-        # Suggestions text
         self.suggestions_text = tk.Text(self.main_frame, height=10, width=35, bg="#333333",
                                         fg=self.fg_color, insertbackground=self.fg_color,
                                         font=("Arial", 10), wrap="word")
@@ -63,11 +57,9 @@ class PasswordStrengthChecker:
         password = self.password_entry.get()
         strength, suggestions = self.evaluate_password(password)
 
-        # Update strength label with color coding
         strength_colors = {"Weak": "#ff3333", "Moderate": "#ffa500", "Strong": "#00ff00"}
         self.strength_label.config(text=f"Strength: {strength}", fg=strength_colors[strength])
 
-        # Update suggestions
         self.suggestions_text.config(state="normal")
         self.suggestions_text.delete("1.0", tk.END)
         if suggestions:
@@ -81,8 +73,7 @@ class PasswordStrengthChecker:
     def evaluate_password(self, password):
         suggestions = []
         score = 0
-
-        # Check length
+        
         if len(password) < 8:
             suggestions.append("Make the password at least 8 characters long")
         elif len(password) >= 12:
@@ -90,13 +81,11 @@ class PasswordStrengthChecker:
         else:
             score += 1
 
-        # Check for uppercase letters
         if not re.search(r"[A-Z]", password):
             suggestions.append("Add at least one uppercase letter (A-Z)")
         else:
             score += 1
 
-        # Check for lowercase letters
         if not re.search(r"[a-z]", password):
             suggestions.append("Add at least one lowercase letter (a-z)")
         else:
@@ -108,13 +97,11 @@ class PasswordStrengthChecker:
         else:
             score += 1
 
-        # Check for special characters
         if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
             suggestions.append("Add at least one special character (e.g., !, @, #, $)")
         else:
             score += 1
 
-        # Determine strength
         if score <= 2 or len(password) < 8:
             strength = "Weak"
         elif score <= 4:
