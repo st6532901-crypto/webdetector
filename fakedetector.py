@@ -11,9 +11,6 @@ from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 from requests.exceptions import SSLError, RequestException
 
-# -------------------------
-# Logging setup
-# -------------------------
 LOGFILE = "phish_check_debug.log"
 logging.basicConfig(
     filename=LOGFILE,
@@ -32,9 +29,6 @@ def log_exception_context(msg: str):
     traceback_str = traceback.format_exc()
     logging.debug("Full traceback:\n" + traceback_str)
 
-# -------------------------
-# Helpers (more defensive)
-# -------------------------
 def normalize_url(raw: str) -> str:
     raw = raw.strip()
     if not re.match(r'^[a-zA-Z][a-zA-Z0-9+\-.]*://', raw):
@@ -72,7 +66,7 @@ def safe_whois(hostname: str):
     if creation is None:
         logging.debug(f"whois has no creation_date for {hostname}. raw whois object keys: {list(w.keys()) if hasattr(w,'keys') else 'n/a'}")
         return None
-    # handle list or single value
+    
     if isinstance(creation, list):
         creation = creation[0] if creation else None
     if isinstance(creation, datetime):
@@ -156,10 +150,6 @@ def extract_basic_features(html: str, final_url: str):
             'keyword_matches': [],
             'suspicious_form_action': False
         }
-
-# -------------------------
-# Analysis flow (with try/except)
-# -------------------------
 def analyze_url(raw_input: str):
     try:
         url = normalize_url(raw_input)
@@ -234,9 +224,6 @@ def analyze_url(raw_input: str):
         log_exception_context("analyze_url encountered an unexpected error. Full traceback written to log.")
         print("ERROR: An unexpected error occurred. Check phish_check_debug.log for details.")
 
-# -------------------------
-# Command-line entry
-# -------------------------
 def main():
     try:
         if len(sys.argv) >= 2:
